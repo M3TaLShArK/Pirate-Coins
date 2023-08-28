@@ -1,0 +1,148 @@
+
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Main Container */
+#main-container {
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+/* Header */
+#main-header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+/* User Guide */
+#user-guide {
+    background-color: #f9f9f9;
+    padding: 1rem;
+}
+
+/* Template Container */
+#template-container {
+    background-color: #fff;
+    padding: 1rem;
+}
+
+/* Paper Template */
+#paper-template {
+    width: 100%;
+    max-width: 612px; /* 8.5 inches in pixels */
+    margin: auto;
+    border: 1px solid #ccc;
+}
+
+/* Image Grid */
+#image-grid {
+    width: 100%;
+}
+
+/* Grid Cell */
+.grid-cell {
+    width: 25%;
+    padding-top: 25%; /* 1:1 Aspect Ratio */
+    position: relative;
+}
+
+/* Image Placeholder */
+.image-placeholder {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    background-color: #ccc;
+    overflow: hidden;
+}
+
+/* Add Image Button */
+.add-image-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+#main-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+/* Printing Styles */
+@media print {
+    #main-header, #main-footer, #user-guide {
+        display: none;
+    }
+    
+    #template-container {
+        width: 100%;
+        max-width: 612px;
+    }
+    
+    #paper-template {
+        width: 100%;
+        max-width: 612px;
+    }
+}
+
+/* Image Resizing and Cropping */
+.uploaded-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Improved Printing Styles */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #main-header, #main-footer, #user-guide {
+        display: none;
+    }
+    
+    #template-container {
+        width: 100%;
+        max-width: 612px;
+        margin: auto;
+    }
+    
+    #paper-template {
+        width: 100%;
+        max-width: 612px;
+        margin: auto;
+    }
+    
+    #main-container::before {
+        content: "Image Template Creator";
+        font-size: 24px;
+        text-align: center;
+        display: block;
+        margin-bottom: 20px;
+    }
+    
+    /* Remove default browser print styles */
+    @page {
+        margin: 0;
+    }
+}
